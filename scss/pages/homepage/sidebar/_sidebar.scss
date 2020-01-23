@@ -1,0 +1,157 @@
+/* SIDEBAR */
+
+.sidebar {
+   width: percentage(270px);
+
+   &-nav {
+      border-radius: 10px;
+      background: $white01;
+      margin-bottom: 30px;
+   }
+
+   &-filter {
+      border-radius: 10px;
+      background: $white01;
+      padding-bottom: 20px;
+
+      & + & {
+         margin-top: 30px;
+      }
+
+      &.pay {
+         padding: 0;
+      }
+   }
+
+   &-list {
+      &.subnav {
+         display: none;
+         border-bottom: 1px solid $grey04;
+
+         .checkbox:checked ~ & {
+            display: block;
+         }
+      }
+   }
+
+   &-item {
+      position: relative;
+
+      & + & {
+         border-top: 1px solid $white02;
+      }
+
+      .subnav & {
+         border-top: 1px solid $grey04;
+         background: $grey01;
+      }
+   }
+
+   &-link {
+      font-size: rem(13);
+      font-family: $font-main;
+      color: $blue04;
+      line-height: rem(40);
+      padding: 0 40px 0 20px;
+
+      &:before {
+         position: absolute;
+         top: 50%;
+         right: 25px;
+         transform: translateY(-50%) rotate(90deg);
+         font-size: rem(11);
+
+         .checkbox:checked ~ & {
+            transform: translateY(-50%);
+         }
+      }
+
+      .subnav & {
+         color: $grey04;
+         text-transform: uppercase;
+         font-size: rem(11);
+      }
+
+      &.nav_label {
+         display: block;
+         position: relative;
+         color: $blue04;
+      }
+   }
+
+   &-title {
+      font-size: rem(11);
+      font-family: $font_main;
+      color: $blue04;
+      text-transform: uppercase;
+      padding: 20px;
+      border-bottom: 1px solid $grey01;
+      margin-bottom: 20px;
+
+      .subtitle & {
+         border: 0;
+         padding: 0;
+         margin: 0;
+      }
+
+      .pay & {
+         margin: 0;
+      }
+   }
+
+   &-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $grey01;
+      padding: 20px;
+      margin-bottom: 20px;
+
+      &-link {
+         font-size: rem(11);
+         font-family: $font_main;
+         color: $blue03;
+         text-decoration: underline;
+         text-transform: uppercase;
+      }
+   }
+
+   &-labels {
+      width: 100%;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+
+      & + & {
+         margin-top: 15px;
+      }
+   }
+
+   &-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+   }
+
+   &-elements {
+      width: 50%;
+      min-width: 130px;
+      text-align: center;
+      padding: 20px;
+
+      & + & {
+         border-left: 1px solid $grey01;
+      }
+   }
+
+   &-label {
+      font-size: rem($size);
+      font-family:$font_main;
+      color: $main_color;
+      line-height: 1.5;
+   }
+
+   &-value {
+      color: $grey04;
+   }
+}
+

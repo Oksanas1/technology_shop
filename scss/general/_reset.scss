@@ -1,0 +1,54 @@
+html {
+	font-size: 10px;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, input, button, body {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+	font-size: 0;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+	cursor: pointer;
+}
+
+select {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: none;
+	outline: 0;
+	border: 0;
+}
+
+button,
+input,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+textarea {
+	border: 0;
+	background: none;
+	outline: 0;
+}
+

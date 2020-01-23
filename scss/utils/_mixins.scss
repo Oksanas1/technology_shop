@@ -1,0 +1,81 @@
+@mixin image_block {
+	display: block;
+	max-width: 100%;
+}
+
+// HOVER
+@mixin hover($color: $black02) {
+	position: relative;
+
+	&:hover::before {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		border-bottom: 1px solid $color;
+	}
+}
+
+// CLEAR FIX
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+		width: 100%;
+	}
+}
+
+// HORIZONTAL STRETCHING OF BLOCK
+@mixin justify {
+	text-align: justify;
+
+	&::after {
+		content: "";
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+// PIXEL TO REM
+@function rem($value) {
+	@return ($value / $size + rem);
+}
+
+// PERCENTAGE
+@function percentage($current, $parent: $site_width) {
+	@return ($current / $parent * 100%);
+}
+
+// HORIZONTAL CENTER BOX
+@mixin horizontal($max-width: $site_width) {
+	width: 100%;
+	max-width: $site_width;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+// DISPLAY INLINE-BLOCK
+@mixin inline-block {
+	display: inline-block;
+	vertical-align: top;
+}
+
+// ABSOLUTE TOP
+@mixin absolute($top: 0, $left: 0, $right: 0) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	right: $right;
+}
+
+// RESPONSE BOX
+@mixin response($current, $parent: $site_width) {
+	&::before {
+		content: "";
+		display: block;
+		padding-bottom: $current / $parent * 100%;
+	}
+}
+

@@ -1,0 +1,204 @@
+/*HEADER*/
+
+.header {
+	position: relative;
+	background: $white01;
+
+	&-inner {
+		@include horizontal;
+
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+}
+
+.burger {
+	margin-right: 30px;
+
+	&-button {
+		@include icon(burger_line);
+
+		display: inline-block;
+		cursor: pointer;
+		color: $blue06;
+
+		&:before {
+			font-size: rem(14);
+		}
+	}
+
+	&-filter {
+		@include absolute(100%)
+
+		display: none;
+		background: $white01;
+		border-top: 1px solid $grey01;
+		z-index: 5;
+
+		.checkbox:checked ~ & {
+			display: block;
+		}
+	}
+
+	&-content {
+		@include horizontal;
+
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&-nav {
+		padding: 25px 0;
+	}
+
+	&-item {
+		display: inline-block;
+
+		& + & {
+			margin-left: 15px;
+		}
+	}
+
+	&-link {
+		font-size: rem(11);
+		font-family: $font_main;
+		color: $blue02;
+		text-transform: uppercase;
+		line-height: 1.2;
+
+		&:hover {
+			color: $black02;
+		}
+		
+		&.link_active {
+			color: $black02;
+		}
+	}
+
+	&-supports {
+		font-size: 0;
+
+		.burger-link {
+			margin-right: 30px;
+		}
+	}
+
+	&-form {
+		display: inline-block;
+		padding: 25px 0;
+		border-left: 1px solid $grey01;
+		border-right: 1px solid $grey01;
+		position: relative;
+	}
+
+	&-input {
+		padding: 0 10px 0 35px;
+		line-height: 1.2;
+		width: 200px;
+
+		&::placeholder {
+			font-size: rem(11);
+			font-family: $font_main;
+			color: $blue02;
+		}
+	}
+
+	&-label {
+		position: absolute;
+		top: 50%;
+		left: 15px;
+		transform: translateY(-50%);
+
+		&::before {
+			font-size: rem(13);
+			color: $main_color;
+		}
+	}
+}
+
+.logo {
+	padding: 30px 0 30px 30px;
+	border-left: 1px solid $grey01;
+
+	&-link {
+		display: block;
+		width: 90px;
+		overflow: hidden;
+	}
+
+	&-image {
+		@include image_block;
+	}
+}
+
+.nav {
+	flex-grow: 1;
+
+	&-list {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	&-item {
+
+		& + & {
+			margin-left: 30px;
+		}
+	}
+
+	&-link {
+		font-size: rem(14);
+		font-family: $font_main;
+		color: $blue04;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.account {
+	padding-left: 25px;
+	position: relative;
+
+	&-link {
+		font-size: rem(14);
+		font-family: $font_main;
+		color: $blue04;
+		line-height: 1.2;
+		text-transform: uppercase;
+		margin-right: 30px;
+		text-align: center;
+	
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			font-size: rem(19);
+		}
+	}
+
+	&-value {
+		display: inline-block;
+		min-width: 25px;
+		line-height: 14px;
+		border-radius: 24px;
+		padding: 5px;
+		background: $grey02;
+	}
+
+	&-button {
+		font-size: rem(11);
+		font-family: $font_main;
+		color: $blue04;
+		text-transform: uppercase;
+		line-height: 27px;
+		border: 2px solid $grey02;
+		border-radius: 24px;
+		padding: 5px 15px;
+	}
+}
+

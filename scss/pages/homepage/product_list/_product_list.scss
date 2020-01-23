@@ -1,0 +1,139 @@
+/* PRODUCT */
+
+.product_list {
+   width: percentage(870px);
+
+   &-list {
+      margin-top: -30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+
+   &-item {
+      width: percentage(270px, 870px);
+      margin-top: 30px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      background: $white01;
+
+      &.large {
+         width: percentage(570px, 870px);
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         align-items: stretch;
+      }
+   }
+
+   &-link {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+
+      .product_banner & {
+         justify-content: space-between;
+         flex-direction: row;
+      }
+   }
+
+   &-image {
+      max-width: 100%;
+
+      .product_banner & {
+         max-width: none;
+         height: 100%;
+      }
+   }
+
+   &-info {
+      padding: 20px;
+      text-align: center;
+
+      &-inner { 
+         text-align: left;
+      }
+
+      .large & {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+
+      .product_banner & {
+         position: absolute;
+         top: 30px;
+         left: 0;
+         right: 0;
+         padding: 0 20px;
+      }
+   }
+
+   &-name {
+      font-size: rem(16);
+      font-family: $font_main;
+      color: $black02;
+      line-height: 1;
+      font-weight: normal;
+      margin-bottom: 20px;
+   }
+
+   &-description {
+      font-size: rem(12);
+      font-family: $font_main;
+      color: $grey04;
+      text-transform: uppercase;
+      line-height: 1.4;
+      margin-bottom: 20px;
+
+      .large & {
+         margin: 0;
+      }
+   }
+
+   &-price {
+      font-family: $font_main;
+      font-size: rem(14);
+      color: $black02;
+      margin-bottom: 20px;
+
+      .large & {
+         position: absolute;
+         top: 10px;
+         left: 10px;
+         color: $white01;
+         background: $black02;
+         border-radius: 5px;
+         padding: 0 10px;
+         line-height: 27px;
+      }
+   }
+
+   &-form {
+      border-radius: 24px;
+      border: 2px solid $grey01;
+      width: percentage(230px, 570px);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+   }
+
+   &-submit {
+      width: 100%;
+      padding: 10px;
+      font-size: rem(11);
+      font-family: $font_main;
+      color: $blue07;
+      text-transform: uppercase;
+      line-height: 1.2;
+      text-align: center;
+
+      & + & {
+         border-left: 2px solid $grey01;
+      }
+   }
+}
+

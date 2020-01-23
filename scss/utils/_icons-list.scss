@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "icons";
+  src: url('../fonts/icons/icons.eot');
+  src: url('../fonts/icons/icons.eot?#iefix') format('eot'),
+  url('../fonts/icons/icons.woff2') format('woff2'),
+  url('../fonts/icons/icons.woff') format('woff'),
+  url('../fonts/icons/icons.ttf') format('truetype'),
+  url('../fonts/icons/icons.svg#icons') format('svg');
+}
+
+@mixin icon-styles {
+  font-family: "icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 32px;
+}
+
+%icon {
+  @include icon-styles;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+  @if $filename == arrow-down {
+  $char: "\E001";
+}
+  @if $filename == arrow {
+  $char: "\E002";
+}
+  @if $filename == burger_line {
+  $char: "\E003";
+}
+  @if $filename == check {
+  $char: "\E004";
+}
+  @if $filename == facebook {
+  $char: "\E005";
+}
+  @if $filename == google-plus {
+  $char: "\E006";
+}
+  @if $filename == search {
+  $char: "\E007";
+}
+  @if $filename == shopping-cart {
+  $char: "\E008";
+}
+  @if $filename == twitter {
+  $char: "\E009";
+}
+
+@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+&:#{$insert} {
+  @if $extend {
+    @extend %icon;
+  } @else {
+    @include icon-styles;
+  }
+  content: icon-char($filename);
+}
+}
+
+.icon-arrow-down {
+  @include icon(arrow-down);
+}
+.icon-arrow {
+  @include icon(arrow);
+}
+.icon-burger_line {
+  @include icon(burger_line);
+}
+.icon-check {
+  @include icon(check);
+}
+.icon-facebook {
+  @include icon(facebook);
+}
+.icon-google-plus {
+  @include icon(google-plus);
+}
+.icon-search {
+  @include icon(search);
+}
+.icon-shopping-cart {
+  @include icon(shopping-cart);
+}
+.icon-twitter {
+  @include icon(twitter);
+}

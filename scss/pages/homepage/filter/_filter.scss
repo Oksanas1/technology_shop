@@ -1,0 +1,109 @@
+/* FILTER */
+
+.filter {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   align-items: center;
+   width: 100%;
+   background: $white01;
+   margin-bottom: 30px;
+   border-radius: 10px;
+
+   &-sort {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 15px 0 10px;
+
+      &.position {
+         width: percentage(250px);
+         border-right: 2px solid $white02;
+      }
+
+      &.transportation {
+         width: percentage(225px);
+         border-left: 2px solid $white02;
+      }
+   } 
+
+   &-title {
+      font-size: rem(11);
+      font-family: $font_main;
+      color: $grey05;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-right: 10px;
+   }
+
+   &-selects {
+      position: relative;
+      padding-right: 20px;
+
+      &:before {
+         position: absolute;
+         top: 50%;
+         right: 0;
+         transform: translateY(-50%);
+         width: 10px;
+         height: 7px;
+         font-size: rem(7);
+         color: $grey05;
+      }
+   }
+
+   &-select {
+      font-size: rem(11);
+      font-family: $font_main;
+      color: $blue04;
+      text-transform: uppercase;
+      line-height: 30px;
+   }
+
+   &-elements {
+      display: flex;
+      align-items: center;
+      padding: 15px 0 10px;
+
+      .check::before {
+         border-radius: 50%;
+      }
+   }
+
+   &-element {
+      font-size: rem(13);
+      font-family: $font_main;
+      color: $blue04;
+      line-height: 30px;
+      border: 2px solid $grey02;
+      border-radius: 24px;
+      padding: 0 15px;
+      background: $grey01;
+
+      &::placeholder {
+         color: $grey04;
+      }
+
+      .text & {
+         width: 160px;
+      }
+
+      .price & {
+         width: 65px;
+         text-align: center;
+      }
+   }
+
+   &-span {
+      padding: 0 10px;
+      color: $grey02;
+   }
+
+   &-label {
+      font-size: rem(13);
+      font-family: $font_main;
+      color: $blue04;
+      line-height: 1.5;
+   }
+}
+
